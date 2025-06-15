@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@theme {
+    --color-logo: #87bf56;
+    --color-primary: #6aab7b;
+    --color-primary-light: #a3c9a8;
+    --color-primary-hover: #f4faf4;
+    --color-secondary: #f2a65a;
+    --color-text: #484848;
+    --color-text-light: #8c8c8c;
+    --color-background: #f2f2f2;
+    --color-white-hover: #f9f9f9;
+    --color-white: #ffffff;
+}
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-decoration: inherit;
+}
+a:hover {
+    color: var(--color-secondary);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+}
+
+#app {
+    width: 100%;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: var(--color-text);
+        background-color: var(--color-background);
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
