@@ -1,6 +1,9 @@
 <script lang="ts">
+    import { Icon } from '@iconify/vue'
+
     export default {
         name: 'Header',
+        components: { Icon },
     }
 </script>
 
@@ -9,7 +12,7 @@
         class="flex h-14 w-full flex-shrink-0 items-center justify-between px-5 py-2.5"
     >
         <img
-            src="../../../public/logo.png"
+            src="/logo.png"
             alt="Logo image"
             height="40"
             width="40"
