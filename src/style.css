@@ -12,30 +12,73 @@
     --color-background: #f2f2f2;
     --color-white-hover: #f9f9f9;
     --color-white: #ffffff;
+
+    --text-xxs: 8px; /*small*/
+    --text-xs: 9px; /*span*/
+    --text-sm: 10px; /*p*/
+    --text-base: 12px; /*p*/
+    --text-md: 14px; /*h3*/
+    --text-lg: 16px; /*h2*/
+    --text-xl: 18px; /*h1*/
 }
 
-@media (max-width: 600px) {
-    @theme {
-        --text-xxs: 8px;
-        --text-xs: 9px;
-        --text-sm: 10px;
-        --text-base: 12px;
-        --text-md: 14px;
-        --text-lg: 18px;
-        --text-xl: 20px;
+@layer base {
+    h1 {
+        color: var(--color-text);
+        font-size: var(--text-xl);
+        font-weight: 500;
+    }
+
+    h2 {
+        color: var(--color-text);
+        font-size: var(--text-lg);
+        font-weight: 500;
+    }
+
+    h3 {
+        color: var(--color-text);
+        font-size: var(--text-md);
+        font-weight: 500;
+    }
+
+    p {
+        color: var(--color-text-light);
+        font-size: var(--text-base);
+        font-weight: 400;
+    }
+
+    span {
+        color: var(--color-text-light);
+        font-size: var(--text-xs);
+        font-weight: 500;
+    }
+
+    small {
+        color: var(--color-text-light);
+        font-size: var(--text-xxs);
+        font-weight: 500;
     }
 }
 
-@media (min-width: 600px) {
-    @theme {
-        /* ajustar quando começar o desenvolvimento desktop */
-        --text-xxs: 16px;
-        --text-xs: 9px;
-        --text-sm: 10px;
-        --text-base: 12px;
-        --text-md: 14px;
-        --text-lg: 16px;
-        --text-xl: 20px;
+@layer components {
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 5px;
+        background-color: var(--color-white);
+        /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); */
+        padding: 15px;
+    }
+
+    .icon-background {
+        background-color: var(--color-background);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
