@@ -14,7 +14,7 @@
         <h1>Your statistics</h1>
 
         <div class="flex justify-around">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center gap-1">
                 <div class="icon-background">
                     <Icon icon="icon-park-outline:fire" width="18" />
                 </div>
@@ -22,7 +22,7 @@
                 <h3>42</h3>
             </div>
 
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center gap-1">
                 <div class="icon-background">
                     <Icon icon="icon-park-outline:fire" width="18" />
                 </div>
@@ -30,7 +30,7 @@
                 <h3>128</h3>
             </div>
 
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center gap-1">
                 <div class="icon-background">
                     <Icon icon="icon-park-outline:fire" width="18" />
                 </div>
@@ -38,7 +38,7 @@
                 <h3>7</h3>
             </div>
 
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center gap-1">
                 <div class="icon-background">
                     <Icon icon="icon-park-outline:fire" width="18" />
                 </div>
