@@ -18,6 +18,6 @@
         :to="redirectTo"
     >
         <Icon :icon="icon" width="24" />
-        <span class="text-xs">{{ label }}</span>
+        <span class="text-sm">{{ label }}</span>
     </router-link>
 </template>
