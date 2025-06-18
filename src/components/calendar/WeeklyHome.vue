@@ -1,24 +1,19 @@
 <template>
     <div class="calendar-wrapper">
         <v-calendar
-            ref="calendar"
+            view="weekly"
             :rows="1"
-            v-model="selectedDate"
-            style="display: none"
-            is-dark="system"
-            v-slot="{ pages }"
+            v-model="date"
+            :attributes="attributes"
         >
-            <div class="week-container" v-if="pages.length > 0">
+            <template #day-content="{ day }">
                 <div
-                    v-for="day in getFiveDays(pages[0].days)"
-                    :key="day.id"
-                    class="day-item"
-                    :class="{ selected: isSelected(day.date) }"
-                    @click="selectDay(day.date)"
+                    class="custom-day-content"
+                    :class="{ 'is-selected': isSelected(day.date) }"
                 >
                     <span class="day-number">{{ day.day }}</span>
                     <span class="day-label">{{
-                        day.weekdayLabel.toLowerCase()
+                        getWeekdayName(day.weekday)
                     }}</span>
                     <div class="meal-icons">
                         <span>🍽️</span>
@@ -26,7 +21,7 @@
                         <span>🍲</span>
                     </div>
                 </div>
-            </div>
+            </template>
         </v-calendar>
     </div>
 </template>
@@ -34,27 +29,18 @@
 <script setup>
     import { ref, computed } from 'vue'
 
-    // 'ref' para o v-calendar para podermos chamar métodos nele se precisarmos
-    const calendar = ref(null)
+    const date = ref(null)
 
-    // Armazena a data que está atualmente selecionada
     const selectedDate = ref(new Date())
 
-    // Função para verificar se o dia do loop é o dia selecionado
-    const isSelected = (date) => {
-        return date.toDateString() === selectedDate.value.toDateString()
+    const isSelected = (date) => date.toDateString() === selectedDate.value.toDateString()
+
+    const getWeekdayName = (weekday) => {
+        const names = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+        return names[weekday - 1]
     }
 
-    // Função para atualizar a data selecionada ao clicar
-    const selectDay = (date) => {
-        selectedDate.value = date
-    }
-
-    // Função para pegar apenas 5 dias da semana, como no seu exemplo
-    const getFiveDays = (days) => {
-        // O v-calendar por padrão gera 7 dias. Aqui pegamos os 5 primeiros.
-        return days.slice(0, 5)
-    }
+    const attributes = ref([])
 </script>
 
 <style scoped>
@@ -62,11 +48,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-family:
-            -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-            Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        max-width: 100%;
     }
 
     .week-container {
