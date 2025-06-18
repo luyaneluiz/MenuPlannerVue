@@ -7,7 +7,7 @@
     <div class="bg-background text-text-light flex min-h-screen flex-col">
         <Header />
 
-        <main class="min-h-full w-full max-w-4xl flex-grow px-4">
+        <main class="min-h-full w-full max-w-4xl flex-grow">
             <router-view />
         </main>
 
