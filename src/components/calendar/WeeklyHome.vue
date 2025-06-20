@@ -64,6 +64,10 @@
         display: none !important; /* Esconde o cabeçalho do calendário */
     }
 
+    .vc-weeks {
+        overflow: auto;
+    }
+
     .custom-day-content {
         display: flex;
         flex-direction: column;
