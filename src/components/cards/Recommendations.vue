@@ -1,5 +1,6 @@
 <script>
     import RecipeCard from '../recipes/RecipeCard.vue'
+    import WidgetCard from '../common/WidgetCard.vue'
     import { Swiper, SwiperSlide } from 'swiper/vue'
     import 'swiper/css'
 
@@ -7,8 +8,9 @@
         name: 'Recommendations',
         components: {
             RecipeCard,
-            Swiper, 
-            SwiperSlide
+            Swiper,
+            SwiperSlide,
+            WidgetCard,
         },
         data() {
             return {
@@ -59,11 +61,10 @@
 </script>
 
 <template>
-    <section class="card">
-        <div class="flex items-center justify-between">
-            <h1>Recommendations</h1>
+    <WidgetCard title="Recommendations">
+        <template #headerAction>
             <a href="" class="text-base">See More</a>
-        </div>
+        </template>
 
         <swiper
             navigation
@@ -77,11 +78,8 @@
             class="w-full"
         >
             <swiper-slide v-for="recipe in recommendations" :key="recipe.id">
-                <RecipeCard
-                    :image="recipe.image"
-                    :title="recipe.title"
-                />
+                <RecipeCard :image="recipe.image" :title="recipe.title" />
             </swiper-slide>
         </swiper>
-    </section>
+    </WidgetCard>
 </template>

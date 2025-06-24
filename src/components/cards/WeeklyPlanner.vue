@@ -1,22 +1,22 @@
 <script>
     import { Icon } from '@iconify/vue'
     import WeeklyHome from '../calendar/WeeklyHome.vue'
+    import WidgetCard from '../common/WidgetCard.vue'
 
     export default {
         name: 'WeeklyPlanner',
         components: {
             Icon,
             WeeklyHome,
+            WidgetCard,
         },
     }
 </script>
 
 <template>
-    <section class="card">
-        <h1>Your weekly meal planner</h1>
-
+    <WidgetCard title="Your weekly meal planner">
         <WeeklyHome />
 
         <button class="md:hidden">Edit</button>
-    </section>
+    </WidgetCard>
 </template>

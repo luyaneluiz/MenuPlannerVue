@@ -78,15 +78,6 @@
 }
 
 @layer components {
-    .card {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        border-radius: 5px;
-        background-color: var(--color-white);
-        padding: 15px;
-    }
-
     .icon-background {
         background-color: var(--color-background);
         border-radius: 50%;

@@ -1,18 +1,18 @@
 <script>
     import { Icon } from '@iconify/vue'
+    import WidgetCard from '../common/WidgetCard.vue'
 
     export default {
         name: 'Statistics',
         components: {
             Icon,
+            WidgetCard,
         },
     }
 </script>
 
 <template>
-    <section class="card w-full">
-        <h1>Your statistics</h1>
-
+    <WidgetCard title="Your statistics">
         <div class="flex justify-around">
             <div class="flex flex-col items-center gap-1">
                 <div class="icon-background">
@@ -46,5 +46,5 @@
                 <h3>7</h3>
             </div>
         </div>
-    </section>
+    </WidgetCard>
 </template>
