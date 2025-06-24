@@ -1,5 +1,5 @@
 <script>
-    import RecipeCard from '../recipes/RecipeCard.vue'
+    import RecipeCardGrid from '../cards/RecipeCardGrid.vue'
     import WidgetCard from '../common/WidgetCard.vue'
     import { Swiper, SwiperSlide } from 'swiper/vue'
     import 'swiper/css'
@@ -7,7 +7,7 @@
     export default {
         name: 'Recommendations',
         components: {
-            RecipeCard,
+            RecipeCardGrid,
             Swiper,
             SwiperSlide,
             WidgetCard,
@@ -70,7 +70,7 @@
             navigation
             :slides-per-view="2"
             :breakpoints="{
-                768: { slidesPerView: 'auto' },
+                768: { slidesPerView: 4 },
             }"
             :space-between="10"
             @swiper="onSwiper"
@@ -78,7 +78,7 @@
             class="w-full"
         >
             <swiper-slide v-for="recipe in recommendations" :key="recipe.id">
-                <RecipeCard :image="recipe.image" :title="recipe.title" />
+                <RecipeCardGrid :image="recipe.image" :title="recipe.title" />
             </swiper-slide>
         </swiper>
     </WidgetCard>

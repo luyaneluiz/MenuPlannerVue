@@ -1,7 +1,7 @@
 <script>
-    import WeeklyPlanner from '../components/cards/WeeklyPlanner.vue'
-    import Statistics from '../components/cards/Statistics.vue'
-    import Recommendations from '../components/cards/Recommendations.vue'
+    import WeeklyPlanner from '../components/widgets/WeeklyPlanner.vue'
+    import Statistics from '../components/widgets/Statistics.vue'
+    import Recommendations from '../components/widgets/Recommendations.vue'
     import WidgetCard from '../components/common/WidgetCard.vue'
     import { Icon } from '@iconify/vue'
 
