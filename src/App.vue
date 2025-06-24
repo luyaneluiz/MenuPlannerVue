@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import Header from './components/Layout/Header.vue'
-    import NavigationBar from './components/Layout/NavigationBar.vue'
+    import Header from './components/layout/Header.vue'
+    import NavigationBar from './components/layout/NavigationBar.vue'
 </script>
 
 <template>
