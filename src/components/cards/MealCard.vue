@@ -5,25 +5,23 @@
         name: 'MealCard',
         components: { Icon },
         props: {
-            image: {
-                type: String,
-                required: true,
-            },
-            title: {
-                type: String,
-                required: true,
-            },
-            tag: {
-                type: String,
-                default: 'recipe',
-            },
-            time: {
-                type: String,
-                default: '30 mins',
-            },
-            calories: {
-                type: Number,
-                default: 0,
+            meal: {
+                title: {
+                    type: String,
+                    required: true,
+                },
+                image: {
+                    type: String,
+                    required: true,
+                },
+                time: {
+                    type: String,
+                    required: true,
+                },
+                calories: {
+                    type: Number,
+                    required: true,
+                },
             },
         },
     }
@@ -32,20 +30,20 @@
 <template>
     <div class="flex w-full items-center gap-3 p-1.5">
         <img
-            :src="image"
+            :src="meal.image"
             alt="Recipe image"
             class="h-16 w-20 rounded-md object-cover"
         />
 
         <div class="flex w-full flex-col items-start justify-center gap-2">
             <p class="line-clamp-2 font-semibold text-ellipsis">
-                {{ title }}
+                {{ meal.title }}
             </p>
 
             <div class="flex items-center gap-1">
-                <span>{{ time }}</span>
+                <span>{{ meal.time }}</span>
                 <div class="bg-text h-0.5 w-0.5 rounded-full"></div>
-                <span>{{ calories }} kcal</span>
+                <span>{{ meal.calories }} kcal</span>
             </div>
         </div>
 
