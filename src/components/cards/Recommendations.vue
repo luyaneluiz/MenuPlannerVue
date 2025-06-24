@@ -1,10 +1,14 @@
 <script>
     import RecipeCard from '../recipes/RecipeCard.vue'
+    import { Swiper, SwiperSlide } from 'swiper/vue'
+    import 'swiper/css'
 
     export default {
         name: 'Recommendations',
         components: {
             RecipeCard,
+            Swiper, 
+            SwiperSlide
         },
         data() {
             return {
@@ -37,6 +41,20 @@
                 ],
             }
         },
+        setup() {
+            const onSwiper = (swiper) => {
+                console.log(swiper)
+            }
+
+            const onSlideChange = () => {
+                console.log('slide change')
+            }
+
+            return {
+                onSwiper,
+                onSlideChange,
+            }
+        },
     }
 </script>
 
@@ -47,13 +65,20 @@
             <a href="" class="text-base">See More</a>
         </div>
 
-        <div class="flex gap-4 overflow-x-scroll">
-            <RecipeCard
-                v-for="recipe in recommendations"
-                :key="recipe.id"
-                :image="recipe.image"
-                :title="recipe.title"
-            />
-        </div>
+        <swiper
+            navigation
+            :slides-per-view="2"
+            :space-between="10"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+            class="w-full"
+        >
+            <swiper-slide v-for="recipe in recommendations" :key="recipe.id">
+                <RecipeCard
+                    :image="recipe.image"
+                    :title="recipe.title"
+                />
+            </swiper-slide>
+        </swiper>
     </section>
 </template>

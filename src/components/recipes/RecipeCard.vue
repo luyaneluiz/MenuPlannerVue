@@ -30,7 +30,7 @@
 </script>
 
 <template>
-    <div class="flex min-w-40 flex-col gap-2">
+    <div class="flex w-40 flex-col gap-2 p-1.5">
         <img
             :src="image"
             alt="Recipe image"
