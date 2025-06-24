@@ -17,6 +17,6 @@
 
         <WeeklyHome />
 
-        <button>Edit</button>
+        <button class="md:hidden">Edit</button>
     </section>
 </template>

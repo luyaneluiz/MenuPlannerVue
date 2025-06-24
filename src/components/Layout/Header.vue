@@ -9,7 +9,7 @@
 
 <template>
     <header
-        class="flex h-14 w-full flex-shrink-0 items-center justify-between px-5 py-2.5"
+        class="flex h-14 w-full flex-shrink-0 items-center justify-between px-5 md:px-16 py-2.5"
     >
         <img
             src="/logo.png"

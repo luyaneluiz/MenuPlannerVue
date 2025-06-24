@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <section class="card">
+    <section class="card w-full">
         <h1>Your statistics</h1>
 
         <div class="flex justify-around">

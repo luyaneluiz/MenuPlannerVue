@@ -15,7 +15,7 @@
                     <span class="day-label">{{
                         getWeekdayName(day.weekday)
                     }}</span>
-                    <div class="meal-icons">
+                    <div class="md:hidden">
                         <span>🍽️</span>
                         <span>🍎</span>
                         <span>🍲</span>

@@ -68,6 +68,9 @@
         <swiper
             navigation
             :slides-per-view="2"
+            :breakpoints="{
+                768: { slidesPerView: 'auto' },
+            }"
             :space-between="10"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
